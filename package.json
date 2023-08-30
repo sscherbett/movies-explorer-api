@@ -1,7 +1,7 @@
 {
   "name": "movies-explorer",
   "version": "1.0.0",
-  "description": "Проект movies-explorer фронтенд + бэкенд",
+  "description": "Проект movies-explorer бэкенд",
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
@@ -27,9 +27,10 @@
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
     "express-winston": "^4.2.0",
+    "helmet": "^7.0.0",
     "jsonwebtoken": "^9.0.1",
-    "mongoose": "^7.3.4",
-    "validator": "^13.9.0",
+    "mongoose": "^7.4.3",
+    "validator": "^13.11.0",
     "winston": "^3.10.0"
   }
 }

@@ -1,5 +1,5 @@
 const { CastError } = require('mongoose').Error;
-const Movie = require('../models/movie.js');
+const Movie = require('../models/movie');
 const {
   ERROR_CODE_OK,
   ERROR_CODE_CREATED,
@@ -8,10 +8,10 @@ const BadRequestError = require('../errors/bad-requesr-err');
 const NotFoundError = require('../errors/not-found-err');
 const ForbiddenError = require('../errors/forbidden-err');
 
-const getAllMovies = async (req, res, next) => {
+const getAllUserMovies = async (req, res, next) => {
   try {
-    const movie = await Movie.find({});
-    res.status(ERROR_CODE_OK).send(movie);
+    const moviesList = await Movie.find({ owner: req.user._id });
+    res.status(ERROR_CODE_OK).send(moviesList);
   } catch (err) {
     next(err);
   }
@@ -54,7 +54,7 @@ const deleteMovie = async (req, res, next) => {
 };
 
 module.exports = {
-  getAllMovies,
+  getAllUserMovies,
   createMovie,
   deleteMovie,
 };

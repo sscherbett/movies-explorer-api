@@ -12,7 +12,7 @@ const { PORT = 3001, DB_URL = 'mongodb://127.0.0.1:27017/bitfilmsdb' } = process
 
 const app = express();
 
-app.use(cors({ origin: ['http://localhost:3000', 'http://scherbett.nomoredomainsicu.ru', 'https://scherbett.nomoredomainsicu.ru'], credentials: true }));
+app.use(cors({ origin: ['http://localhost:3000', 'http://scherbett.nomoredomainsicu.ru', 'https://scherbett.nomoredomainsicu.ru'] }));
 mongoose.connect(DB_URL, {
   useNewUrlParser: true,
   useUnifiedTopology: false,
